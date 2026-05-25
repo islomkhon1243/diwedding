@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Приглашение на свадьбу — Diyara & Islomkhon</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bride-side">
+  <div class="floating-blur blur-1"></div>
+  <div class="floating-blur blur-2"></div>
+  <div class="petals" id="petals"></div>
+  <div class="sparkles" id="sparkles"></div>
+
+  <!-- Стартовая анимация-конверт -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro-inner">
+      <p class="intro-top-text">Семья невесты приглашает вас</p>
+
+      <div class="envelope-scene" id="envelopeScene">
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter">
+            <div class="letter-content">
+              <p class="letter-eyebrow">Wedding Invitation</p>
+              <h2>Diyara & Islomkhon</h2>
+              <p>05.06.2026 • 19:00</p>
+            </div>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+        </div>
+      </div>
+
+      <button id="openInvitationBtn" class="intro-open-btn" type="button">
+        Открыть приглашение
+      </button>
+    </div>
+  </div>
+
+  <!-- Музыка -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./music/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="Управление музыкой">
+    ♫ Музыка
+  </button>
+
+  <main class="wrapper hidden-before-open" id="mainContent">
+    <section class="hero parallax-section">
+      <div class="hero-card reveal visible">
+        <div class="hero-content">
+          <p class="eyebrow">Семья невесты с радостью приглашает</p>
+
+          <h1 class="title">
+            Diyara <span class="amp">&</span> Islomkhon
+          </h1>
+
+          <p class="subtitle">
+            Дорогие родные и друзья, мы будем счастливы видеть вас на праздничном
+            вечере, посвящённом свадьбе нашей дорогой Дияры и Исломхона.
+            Разделите с нами радость этого светлого и незабываемого дня.
+          </p>
+
+          <div class="date-badge">
+            <span>05.06.2026</span>
+            <span>•</span>
+            <span>19:00</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#details" class="btn btn-primary glow-btn">Детали вечера</a>
+            <a href="#location" class="btn btn-secondary">Как добраться</a>
+          </div>
+
+          <div class="scroll-indicator">
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="card couple-gallery reveal hover-float">
+        <h2>Moments</h2>
+
+        <div class="single-photo-card">
+          <div class="photo-placeholder">
+            <!-- Вставьте сюда общее фото пары -->
+            <img src="./images/couple.jpg" alt="Diyara и Islomkhon" />
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card story reveal hover-float">
+          <h2>Наша радость</h2>
+          <p>
+            В жизни каждой семьи есть особенные дни, которые наполняют сердце
+            благодарностью, теплом и счастьем. Для нас таким днём станет свадьба
+            нашей дорогой Дияры и Исломхона. Мы будем искренне рады разделить
+            этот важный вечер с самыми близкими людьми.
+          </p>
+
+          <blockquote class="quote">
+            «Пусть этот день станет началом красивой, светлой и счастливой семейной истории»
+          </blockquote>
+        </article>
+
+        <article class="card details reveal hover-float" id="details">
+          <h2>Детали вечера</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="time">Дата</div>
+              <div>
+                <strong>05 июня 2026</strong>
+                <p>День, когда две семьи объединятся в радости и благословении.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="time">Время</div>
+              <div>
+                <strong>19:00</strong>
+                <p>Начало свадебного вечера.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="time">Формат</div>
+              <div>
+                <strong>Праздничный ужин и торжество</strong>
+                <p>Будем рады вашим улыбкам, добрым пожеланиям и тёплому присутствию.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="card countdown-wrap reveal hover-float" id="countdown">
+        <h2>До свадебного вечера осталось</h2>
+        <p>Каждая секунда приближает нас к радостному событию нашей семьи.</p>
+
+        <div class="countdown">
+          <div class="count-item">
+            <div class="count-value" id="days">0</div>
+            <div class="count-label">Дней</div>
+          </div>
+          <div class="count-item">
+            <div class="count-value" id="hours">0</div>
+            <div class="count-label">Часов</div>
+          </div>
+          <div class="count-item">
+            <div class="count-value" id="minutes">0</div>
+            <div class="count-label">Минут</div>
+          </div>
+          <div class="count-item">
+            <div class="count-value" id="seconds">0</div>
+            <div class="count-label">Секунд</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <article class="card location reveal hover-float" id="location">
+        <h2>Место проведения</h2>
+
+        <p class="location-text">
+          <strong>Адрес:</strong><br />
+          г. Шымкент, жилой массив Сайрам, торжественный зал
+          <span class="placeholder">«Aq tilek»</span><br />
+          <strong>Ориентир:</strong> Актам<br />
+          <strong>Координаты:</strong>
+          <span class="placeholder">42.318752, 69.731421</span>
+        </p>
+
+        <div class="map-actions">
+		  <a
+			class="btn btn-primary glow-btn"
+			href="https://www.google.com/maps?q=42.3182538788729,69.73055277570857"
+			target="_blank"
+			rel="noopener noreferrer"
+		  >
+			Google Maps
+		  </a>
+
+		  <a
+			class="btn btn-secondary"
+			href="https://go.2gis.com/puu4E"
+			target="_blank"
+			rel="noopener noreferrer"
+		  >
+			2GIS
+		  </a>
+		</div>
+
+		<div class="map-frame">
+		  <iframe
+			title="Карта места проведения"
+			src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1916.8214773884529!2d69.73055277570857!3d42.3182538788729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0JjQsdGA0LDQs9C40Lwg0JDRgtCwINGD0LvQuNGG0LAsIDQxLzI!5e1!3m2!1sru!2skz!4v1779684954067!5m2!1sru!2skz"
+			width="600"
+			height="450"
+			style="border:0;"
+			allowfullscreen=""
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade">
+		  </iframe>
+		</div>
+      </article>
+    </section>
+
+    <footer>
+      <p>С уважением и любовью, семья невесты — 05.06.2026</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
